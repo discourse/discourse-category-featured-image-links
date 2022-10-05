@@ -1,0 +1,7 @@
+category_image_sections:
+  default: >-
+    [{}]
+  json_schema: '{"type":"array","format":"list","uniqueItems":true,"items":{"type":"object","properties":{"category_id":{"type":"string"},"section_title":{"type":"string"},"images":{"type":"array","format":"table","uniqueItems":true,"items":{"type":"object","properties":{"link_text":{"type":"string"},"link":{"type":"string"},"image_url":{"type":"string"}},"additionalProperties":false}}},"additionalProperties":false}}'
+
+max_image_height:
+  default: "200px"
