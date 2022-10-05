@@ -24,6 +24,7 @@
   }
 
   h2 {
+    margin-bottom: calc(var(--grid-gap) / 4);
     @media screen and (max-width: 600px) {
       font-size: var(--font-up-1);
     }
