@@ -7,8 +7,6 @@ export default class CategoryFeaturedImages extends Component {
   @controller application;
 
   get shouldShow() {
-    // we hide the topic list, so need to force the footer to show
-    this.application.showFooter = true;
     return this.router.currentRoute.name.includes("discovery.category");
   }
 
@@ -17,6 +15,11 @@ export default class CategoryFeaturedImages extends Component {
       .split("|")
       .map((id) => parseInt(id, 10));
     let currentCategoryID = this?.args?.category?.id;
+
+    if (categoryIDs?.includes(currentCategoryID)) {
+      // if we hide the topic list, we need to force the footer to show
+      this.application.showFooter = true;
+    }
 
     return categoryIDs.includes(currentCategoryID);
   }
