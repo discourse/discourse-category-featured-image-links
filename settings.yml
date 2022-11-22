@@ -5,3 +5,8 @@ category_image_sections:
 
 max_image_height:
   default: "200px"
+
+hide_topic_list:
+  default: ""
+  type: list
+  description: "Hides the topic list using the category ID (the number found in the category page's URL)"
