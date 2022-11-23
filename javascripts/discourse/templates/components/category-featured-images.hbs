@@ -1,6 +1,10 @@
 {{#if shouldShow}}
+  <DSection
+    @pageClass={{if hideTopicList "category-featured-images--hide-topic-list"}}
+  />
+
   {{#each filteredSetting as |fs|}}
-    <div class="category-featured-image-section">
+    <div class="category-featured-image-section custom-filter_{{fs.slug}}">
       {{#if fs.section_title}}
         <h2
           class="category-featured-image-section__title"
