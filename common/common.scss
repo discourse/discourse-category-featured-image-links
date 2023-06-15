@@ -45,7 +45,7 @@
   a {
     color: var(--primary);
     line-height: 1.2;
-    box-shadow: shadow("dropdown");
+    box-shadow: var(--shadow-dropdown);
     transition: box-shadow 0.25s;
     display: flex;
     flex-direction: column;
