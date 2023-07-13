@@ -22,6 +22,20 @@ export default class CategoryFeaturedImages extends Component {
     return categoryIDs.includes(currentCategoryID);
   }
 
+  get hideTopicList() {
+    let categoryIDs = settings.hide_topic_list
+      .split("|")
+      .map((id) => parseInt(id, 10));
+    let currentCategoryID = this?.args?.category?.id;
+
+    if (categoryIDs?.includes(currentCategoryID)) {
+      // if we hide the topic list, we need to force the footer to show
+      this.application.showFooter = true;
+    }
+
+    return categoryIDs.includes(currentCategoryID);
+  }
+
   get filteredSetting() {
     let parsedSetting = JSON.parse(settings.category_image_sections);
     let filteredSetting = [];
