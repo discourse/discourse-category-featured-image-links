@@ -45,21 +45,24 @@
   a {
     color: var(--primary);
     line-height: 1.2;
-    box-shadow: shadow("dropdown");
+    box-shadow: var(--shadow-dropdown);
     transition: box-shadow 0.25s;
     display: flex;
     flex-direction: column;
 
     &:focus,
     &:hover {
-      box-shadow: shadow("card");
+      box-shadow: var(--shadow-card);
       text-decoration: underline;
     }
   }
 }
 
 .category-featured-images--hide-topic-list-page {
-  #list-area {
+  .topic-list {
+    display: none;
+  }
+  .footer-message {
     display: none;
   }
 }
