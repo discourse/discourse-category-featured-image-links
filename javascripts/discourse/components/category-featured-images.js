@@ -8,7 +8,7 @@ export default class CategoryFeaturedImages extends Component {
 
   get shouldShow() {
     if (this.router.currentRoute.name.includes("discovery.category")) {
-      this.application.showFooter = this.hideTopicList ? true : false;
+      this.application.showFooter = true;
       return true;
     }
   }
@@ -18,20 +18,6 @@ export default class CategoryFeaturedImages extends Component {
       .split("|")
       .map((id) => parseInt(id, 10));
     let currentCategoryID = this?.args?.category?.id;
-
-    return categoryIDs.includes(currentCategoryID);
-  }
-
-  get hideTopicList() {
-    let categoryIDs = settings.hide_topic_list
-      .split("|")
-      .map((id) => parseInt(id, 10));
-    let currentCategoryID = this?.args?.category?.id;
-
-    if (categoryIDs?.includes(currentCategoryID)) {
-      // if we hide the topic list, we need to force the footer to show
-      this.application.showFooter = true;
-    }
 
     return categoryIDs.includes(currentCategoryID);
   }
