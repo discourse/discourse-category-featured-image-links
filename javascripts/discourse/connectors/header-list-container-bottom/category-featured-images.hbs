@@ -1,7 +1,4 @@
-{{if
-  this.hideTopicList
-  (body-class "category-featured-images--hide-topic-list")
-}}
+{{if this.hideTopicList (body-class "hide-topic-list")}}
 
 {{#each this.filteredSetting as |fs|}}
   <div class="category-featured-image-section custom-filter_{{fs.slug}}">
