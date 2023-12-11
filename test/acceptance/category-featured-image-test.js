@@ -39,11 +39,6 @@ acceptance("Category featured image", function () {
     settings.hide_topic_list = "1";
     await visit("/c/bug/1");
 
-    assert.true(
-      document.body.classList.contains(
-        "category-featured-images--hide-topic-list-page"
-      ),
-      "body has the .category-featured-images--hide-topic-list-page class"
-    );
+    assert.dom(document.body).hasClass("hide-topic-list");
   });
 });

@@ -1,18 +1,14 @@
 import Component from "@glimmer/component";
 import { inject as service } from "@ember/service";
-import { getOwner } from "discourse-common/lib/get-owner";
+import { getOwnerWithFallback } from "discourse-common/lib/get-owner";
 
 export default class CategoryFeaturedImages extends Component {
   static shouldRender() {
-    const router = getOwner(this).lookup("service:router");
+    const router = getOwnerWithFallback(this).lookup("service:router");
     return router.currentRoute.name.includes("discovery.category");
   }
 
   @service router;
-
-  showFooter() {
-    getOwner(this).lookup("controller:application").showFooter = true;
-  }
 
   get hideTopicList() {
     const categoryIDs = settings.hide_topic_list
