@@ -1,10 +1,11 @@
 import Component from "@glimmer/component";
 import { inject as service } from "@ember/service";
-import { getOwner } from "discourse-common/lib/get-owner";
+import { getOwner } from "@ember/application";
+import { getOwnerWithFallback } from "discourse-common/lib/get-owner";
 
 export default class CategoryFeaturedImages extends Component {
   static shouldRender() {
-    const router = getOwner(this).lookup("service:router");
+    const router = getOwnerWithFallback(this).lookup("service:router");
     return router.currentRoute.name.includes("discovery.category");
   }
 
