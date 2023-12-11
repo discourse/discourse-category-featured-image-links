@@ -1,6 +1,5 @@
 import Component from "@glimmer/component";
 import { inject as service } from "@ember/service";
-import { getOwner } from "@ember/application";
 import { getOwnerWithFallback } from "discourse-common/lib/get-owner";
 
 export default class CategoryFeaturedImages extends Component {
@@ -10,10 +9,6 @@ export default class CategoryFeaturedImages extends Component {
   }
 
   @service router;
-
-  showFooter() {
-    getOwner(this).lookup("controller:application").showFooter = true;
-  }
 
   get hideTopicList() {
     const categoryIDs = settings.hide_topic_list

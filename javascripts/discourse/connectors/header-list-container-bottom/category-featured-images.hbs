@@ -1,10 +1,7 @@
-<DSection
-  {{did-insert this.showFooter}}
-  @pageClass={{if
-    this.hideTopicList
-    "category-featured-images--hide-topic-list"
-  }}
-/>
+{{if
+  this.hideTopicList
+  (body-class "category-featured-images--hide-topic-list")
+}}
 
 {{#each this.filteredSetting as |fs|}}
   <div class="category-featured-image-section custom-filter_{{fs.slug}}">
