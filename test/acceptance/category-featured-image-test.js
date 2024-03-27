@@ -1,6 +1,6 @@
-import { acceptance } from "discourse/tests/helpers/qunit-helpers";
-import { test } from "qunit";
 import { visit } from "@ember/test-helpers";
+import { test } from "qunit";
+import { acceptance } from "discourse/tests/helpers/qunit-helpers";
 
 acceptance("Category featured image", function () {
   test("shows the images", async function (assert) {
