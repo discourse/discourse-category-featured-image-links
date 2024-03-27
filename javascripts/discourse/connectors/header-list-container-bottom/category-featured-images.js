@@ -1,5 +1,5 @@
 import Component from "@glimmer/component";
-import { inject as service } from "@ember/service";
+import { service } from "@ember/service";
 import { getOwnerWithFallback } from "discourse-common/lib/get-owner";
 
 export default class CategoryFeaturedImages extends Component {
