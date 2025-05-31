@@ -2,7 +2,7 @@
   --grid-gap: 2em;
   margin-bottom: var(--grid-gap);
 
-  @media screen and (max-width: 600px) {
+  @media screen and (width <= 600px) {
     --grid-gap: 1em;
   }
 
@@ -11,7 +11,7 @@
     grid-template-columns: repeat(auto-fit, calc(25% - var(--grid-gap)));
     gap: var(--grid-gap);
 
-    @media screen and (max-width: 600px) {
+    @media screen and (width <= 600px) {
       grid-template-columns: repeat(
         auto-fit,
         minmax(calc(50% - var(--grid-gap)), 1fr)
@@ -22,7 +22,7 @@
   h2 {
     margin-bottom: calc(var(--grid-gap) / 4);
 
-    @media screen and (max-width: 600px) {
+    @media screen and (width <= 600px) {
       font-size: var(--font-up-1);
     }
   }
@@ -34,7 +34,7 @@
     margin-top: auto;
     padding: calc(var(--grid-gap) / 4) calc(var(--grid-gap) / 2);
 
-    @media screen and (max-width: 600px) {
+    @media screen and (width <= 600px) {
       font-size: var(--font-0);
     }
   }
