@@ -1,5 +1,4 @@
 import Component from "@glimmer/component";
-import { service } from "@ember/service";
 import bodyClass from "discourse/helpers/body-class";
 
 export default class CategoryFeaturedImages extends Component {
@@ -7,8 +6,6 @@ export default class CategoryFeaturedImages extends Component {
     const router = owner.lookup("service:router");
     return router.currentRoute.name.includes("discovery.category");
   }
-
-  @service router;
 
   get hideTopicList() {
     const categoryIDs = settings.hide_topic_list
